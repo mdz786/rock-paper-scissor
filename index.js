@@ -1,11 +1,11 @@
 
 
 function getComputerChoice(){
-    let randomNumner = Math.random();
-    if(randomNumner < 0.36){
+    let randomNumber = Math.random();
+    if(randomNumber < 0.36){
         return "rock";
     }
-    else if(randomNumner < 0.67){
+    else if(randomNumber < 0.67){
         return "paper";
     }
     else{
@@ -13,30 +13,9 @@ function getComputerChoice(){
     }
 }
 
-//function test(){
-//    return "rock";
-//}
-
-//  working el rey zees (both) 
-
-//function test1(){
-    //let rock = "rock";
-   //if(test().length === rock.length
-    //){
-    //    console.log('yep working');
-    //}
-   // else{
-   //     console.log('nope');
-  //  }
-//}
-
 function getPlayerChoice(){
-    return prompt("enter either R/P/C");
+    return prompt("enter either rock/paper/scissor");
 }
-
-
-
-
 
 function play(PlayerChoice,ComputerChoice){
     if(PlayerChoice.length == ComputerChoice.length){
@@ -80,12 +59,11 @@ function play(PlayerChoice,ComputerChoice){
     }
 }
 
-
-
-
 function game(playCopy){
     for(let i = 1;i<=5;i++){
         playCopy(getPlayerChoice(),getComputerChoice());
         console.log(`You Played ${i} times`);
     }
 }
+
+game(play);
