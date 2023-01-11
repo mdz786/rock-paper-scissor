@@ -12,59 +12,128 @@ function getComputerChoice(){
         return "scissor";
     }
 }
-//dont edit above code...(returns us the ComputerSelection!
+//dont edit above code...(returns us the ComputerSelection...!)
 
 
 //DOM events
 
-const rockButton = document.querySelector('#idrock');
+const buttons = document.querySelectorAll('button');
 const display = document.querySelector('.display');
-rockButton.addEventListener('click',() => compareRockButton(getComputerChoice()));
+const winnerDisplay = document.querySelector('.winner');
+const win1disp = document.querySelector('.winnerDeclaration');
+
+buttons.forEach((button) => {
+    button.addEventListener('click' , (e) => {
+        if(userScore < 5 && computerScore < 5){
+            game(PlayerChoice = e.target.textContent , playRound);
+            
+        }
+        
+        declareWinner();
+        
+    });
+});
 
 
 
-function compareRockButton(ComputerSelection){
-    if(ComputerSelection == rockButton.textContent){
-        display.textContent = `THE ROUND HAS BEEN TIED...! YOU BOTH CHOOSE *ROCK*`;
+
+//new
+
+let userScore = 0;
+let computerScore = 0;
+
+function playRound(PlayerChoice,ComputerChoice){
+   
+        if(PlayerChoice.length == ComputerChoice.length){
+            display.textContent = `This Round has been *TIED* you both choose ${PlayerChoice}`;
+           
+            
+            
+            
+        }
+        if(PlayerChoice.length == 4){
+            if(ComputerChoice.length == 5){
+                display.textContent = `The *COMPUTER* won this Round because ${ComputerChoice} beats ${PlayerChoice}`;
+                ++computerScore;
+                winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
+            
+            
+            }
+        }
+        if(PlayerChoice.length == 5){
+            if(ComputerChoice.length == 4){
+                display.textContent = `The *USER* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
+                ++userScore;
+                winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
+            
+            
+            }
+        }
+        if(PlayerChoice.length == 4){
+            if(ComputerChoice.length == 7){
+                display.textContent = `The *USER* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
+                ++userScore;
+                winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
+            
+            
+            }
+        }
+        if(PlayerChoice.length == 7){
+            if(ComputerChoice.length == 4){
+                display.textContent = `The *COMPUTER* won this Round because ${ComputerChoice} beats ${PlayerChoice}`;
+                ++computerScore;
+                winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
+            
+            
+            }
+        }
+        if(PlayerChoice.length == 5){
+            if(ComputerChoice.length == 7){
+                display.textContent = `The *COMPUTER* won this Round because ${ComputerChoice} beats ${PlayerChoice}`;
+                ++computerScore;
+                winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
+            
+            
+            }
+        }
+        if(PlayerChoice.length == 7){
+            if(ComputerChoice.length == 5){
+                display.textContent = `The *USER* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
+                ++userScore;
+                winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
+            
+            
+            }
+        }
+        
+
+       
+        
+        
     }
-    if(ComputerSelection == 'paper'){
-        display.textContent = 'THE COMPUTER HAS WON THIS ROUND...! AS *PAPER* BEATS *ROCK*';
-    }
-    if(ComputerSelection == 'scissor'){
-        display.textContent = 'THE USER HAS WON THIS ROUND...! AS *ROCK* BEATS *SCISSOR*';
-    }
 
+   
+function game(PlayerChoice , playRound){
+    playRound(PlayerChoice , getComputerChoice());
+    
+    
 }
 
-const paperButton = document.querySelector('#idpaper');
-const scissorButton = document.querySelector('#idscissor');
-paperButton.addEventListener('click',() => comparePaperButton(getComputerChoice()));
-scissorButton.addEventListener('click',() => compareScissorButton(getComputerChoice()));
-
-function comparePaperButton(ComputerSelection){
-    if(ComputerSelection == paperButton.textContent){
-        display.textContent = 'THE ROUND HAS BEEN TIED..! YOU BOTH CHOOSE *PAPER*';
+function declareWinner(){
+    if((userScore == 5)||(computerScore == 5)){
+        if(userScore > computerScore ){
+            win1disp.textContent = `YOU WON`;
+        }
+        else if(userScore < computerScore){
+            win1disp.textContent = `COMPUTER WON`;
+        }
+        else{
+            win1disp.textContent = `TIED MAAAN`
+        }
     }
-    if(ComputerSelection == 'scissor'){
-        display.textContent = 'THE COMPUTER HAS WON THIS ROUND...! AS *SCISSOR* BEATS *PAPER* ';
-    }
-    if(ComputerSelection == 'rock'){
-        display.textContent = 'THE USER HAS WON THIS ROUND...! AS *PAPER* BEATS *ROCK*';
-    }
-
 }
+ 
 
-function compareScissorButton(ComputerSelection){
-    if(ComputerSelection == scissorButton.textContent){
-        display.textContent = 'THE ROUND HAS BEEN TIED...! YOU BOTH CHOOSE *SCISSOR*';
-    }
-    if(ComputerSelection == 'paper'){
-        display.textContent = 'THE USER HAS WON THIS ROUND...! AS *SCISSOR* BEATS *PAPER*';
-    }
-    if(ComputerSelection == 'rock'){
-        display.textContent = 'THE COMPUTER HAS WON THIS ROUND...! AS *ROCK* BEATS *SCISSOR*';
-    }
 
-}
 
 
