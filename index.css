@@ -1,0 +1,18 @@
+.display{
+    height:50% ;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}
+.btn{
+    display: flex;
+    background-color: beige;
+    justify-content: center;
+           
+}
+button{
+    margin: 10px;
+    background-color: blueviolet;
+}
+        
+   
