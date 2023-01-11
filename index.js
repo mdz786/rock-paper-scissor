@@ -62,7 +62,7 @@ function playRound(PlayerChoice,ComputerChoice){
         }
         if(PlayerChoice.length == 5){
             if(ComputerChoice.length == 4){
-                display.textContent = `The *USER* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
+                display.textContent = `*YOU* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
                 ++userScore;
                 winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
             
@@ -71,7 +71,7 @@ function playRound(PlayerChoice,ComputerChoice){
         }
         if(PlayerChoice.length == 4){
             if(ComputerChoice.length == 7){
-                display.textContent = `The *USER* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
+                display.textContent = `*YOU* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
                 ++userScore;
                 winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
             
@@ -98,7 +98,7 @@ function playRound(PlayerChoice,ComputerChoice){
         }
         if(PlayerChoice.length == 7){
             if(ComputerChoice.length == 5){
-                display.textContent = `The *USER* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
+                display.textContent = `*YOU* won this Round because ${PlayerChoice} beats ${ComputerChoice}`;
                 ++userScore;
                 winnerDisplay.textContent = `USER : ${userScore} || COMPUTER : ${computerScore}`;
             
@@ -122,13 +122,13 @@ function game(PlayerChoice , playRound){
 function declareWinner(){
     if((userScore == 5)||(computerScore == 5)){
         if(userScore > computerScore ){
-            win1disp.textContent = `YOU WON`;
+            win1disp.textContent = `YOU WON (reload the page to play again)`;
         }
         else if(userScore < computerScore){
-            win1disp.textContent = `COMPUTER WON`;
+            win1disp.textContent = `COMPUTER WON (reload the page to play again)`;
         }
         else{
-            win1disp.textContent = `TIED MAAAN`
+            win1disp.textContent = `TIED MAAAN (reload the page to play again)`;
         }
     }
 }
