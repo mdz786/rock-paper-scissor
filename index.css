@@ -35,12 +35,13 @@ button:hover{
     background-color: rgb(160, 102, 214);
     cursor: pointer;
     color: rgb(44, 43, 43);
+    font-size: 30px;
 }
         
 .winner{
     text-align: center;
     font-family: 'Changa', sans-serif;
-    
+    font-size: 30px;
     color: yellowgreen;
 }
 .winnerDeclaration{
