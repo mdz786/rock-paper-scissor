@@ -122,13 +122,13 @@ function game(PlayerChoice , playRound){
 function declareWinner(){
     if((userScore == 5)||(computerScore == 5)){
         if(userScore > computerScore ){
-            win1disp.textContent = `YOU WON (reload the page to play again)`;
+            display.textContent = `YOU WON (reload the page to play again)`;
         }
         else if(userScore < computerScore){
-            win1disp.textContent = `COMPUTER WON (reload the page to play again)`;
+            display.textContent = `COMPUTER WON (reload the page to play again)`;
         }
         else{
-            win1disp.textContent = `TIED MAAAN (reload the page to play again)`;
+            display.textContent = `TIED MAAAN (reload the page to play again)`;
         }
     }
 }
