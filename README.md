@@ -1,13 +1,13 @@
 # rock-paper-scissor
 
+>This project consists of a simple game called *Rock,Paper & Scissor*
 
-It this project , i'm going to make a web page , that consists a simple game known as Rock , Paper and Scissor.
 # rules
  > This is a FIVE round game.
- >> Rock beats Scissor.
- >>>Scissor beats Paper.
- >>>>Paper beats Rock.
+ >>  **Rock** beats **Scissor**.
+ >>> **Scissor** beats **Paper**.
+ >>>>**Paper** beats **Rock**.
  # Game Support
- > supported in every device that has a large screen.
+ > The game now supports all kind of devices.
  # link to game :
 click here : https://mdz786.github.io/rock-paper-scissor
